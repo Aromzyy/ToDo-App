@@ -1,0 +1,132 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background-image: url(https://i.pinimg.com/474x/c1/b5/2d/c1b52df7590760e62e9e869df45bc544.jpg);
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.column {
+    /* Remove border and padding from columns */
+    border: none;
+    padding: 0;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+.to-do .label {
+    background-color: rgb(210, 4, 45);
+    color: white;
+}
+
+.doing .label {
+    background-color:rgb(255, 174, 66);
+    color: black;
+}
+
+.done .label {
+    background-color: rgb(116, 161, 46);
+    color: white;
+}
+
+.red-card {
+    background-color: rgb(242, 239, 222);
+}
+
+.yellow-card {
+    background-color: rgb(242, 239, 222);
+}
+
+.green-card {
+    background-color: rgb(242, 239, 222);
+}
+
+/* Add styles for form container and input */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+
+button[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(116, 161, 46);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.red-tag {
+    background-color: rgb(210, 4, 45);
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+.yellow-tag {
+    background-color: rgb(255, 174, 66);
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .green-tag {
+    background-color: rgb(116, 161, 46);
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  

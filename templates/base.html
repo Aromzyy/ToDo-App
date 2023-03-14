@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    <h1>Todo App</h1>
+    <div class="greeting">Hello {{ user.name }}!</div>
+    <div class="form-container">
+        <form action="/add" method="post">
+            <input type="text" name="title" placeholder="Enter New Todo" required>
+            <button type ="submit">Add</button>
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+    </div>
+
+    <div class="container">
+        <div class="column to-do">
+            <h2 class="red-tag">To Do</h2>
+            {% for todo in todo_list %}
+                {% if todo.status == 'to do' %}
+                    <div class="card red-card">
+                        <p class="card-header">{{ todo.title }}</p>
+                        <span class="label">To Do</span>
+                        <a href="/update/{{todo.id}}"><button>Mark as Doing</button></a>
+                        <a href="/delete/{{todo.id}}"><button>Delete</button></a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column doing">
+            <h2 class="yellow-tag">Doing</h2>
+            {% for todo in todo_list %}
+              {% if todo.status == 'doing' %}
+                <div class="card yellow-card">
+                  <p class="card-header">{{ todo.title }}</p>
+                  <span class="label">Doing</span>
+                  <a href="/update/{{todo.id}}"><button>Mark as Done</button></a>
+                  <a href="/delete/{{todo.id}}"><button>Delete</button></a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+          <div class="column done">
+            <h2 class="green-tag">Done</h2>
+            {% for todo in todo_list %}
+              {% if todo.status == 'done' %}
+                <div class="card green-card">
+                  <p class="card-header">{{ todo.title }}</p>
+                  <span class="label">Done</span>
+                  <a href="/delete/{{todo.id}}"><button>Delete</button></a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
